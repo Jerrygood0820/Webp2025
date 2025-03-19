@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>資工選課表</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    table {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      padding: 6px;
+      border: 1px solid #ddd;
+    }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    tr:hover {background-color: #ddd;}
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>資工選課表</h1>
+  
+  <!-- Change 按鈕 -->
+  <button id="changeButton">Change</button>
+  
+  <table id="courseTable">
+    <tr>
+      <th>開課單位</th>
+      <th>課程名稱</th>
+      <th>授課教師</th>
+    </tr>
+    <tr>
+      <td>資工系</td>
+      <td>物件導向程式設計</td>
+      <td>黃崇源</td>
+    </tr>
+    <tr>
+      <td>資工系</td>
+      <td>計算機網路實驗</td>
+      <td>李春良</td>
+    </tr>
+    <tr>
+      <td>資工系</td>
+      <td>作業系統實務</td>
+      <td>張哲維</td>
+    </tr>
+    <tr>
+      <td>資工系</td>
+      <td>生物統計</td>
+      <td>陳光武</td>
+    </tr>
+    <tr>
+      <td>資工系</td>
+      <td>通訊系統</td>
+      <td>陳仁輝</td>
+    </tr>
+    <tr>
+      <td>資工系</td>
+      <td>軟硬體專題(2)</td>
+      <td>魏志達</td>
+    </tr>
+  </table>
+  
+  <script>
+    document.getElementById("changeButton").addEventListener("click", function(){
+      // 取得表格中的所有列
+      var table = document.getElementById("courseTable");
+      var rows = table.getElementsByTagName("tr");
+      // 從第二列開始(第一列為表頭)
+      for (var i = 1; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName("td");
+        if (cells.length >= 3 && cells[1].textContent.trim() === "物件導向程式設計") {
+          // 將第三欄(授課教師)內容替換為 "李春良"
+          cells[2].textContent = "李春良";
+          break;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
