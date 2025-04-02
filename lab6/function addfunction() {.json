@@ -1,0 +1,24 @@
+var count = 1;
+
+function addfunction() {
+    var btn = document.createElement("BUTTON");
+    btn.innerHTML = `CLICK ME (${count})`; // 使用反引号
+    btn.setAttribute("id", "btn_" + count);
+    btn.setAttribute("class", "btn btn-outline-danger");
+    console.log("添加按钮:", btn);
+    
+    document.body.appendChild(btn);
+    count++; // 递增计数
+}
+
+function delfunction() {
+    if (count > 1) { // 避免 count 变成 0
+        count--; 
+        var btn = document.getElementById("btn_" + count);
+        console.log("删除按钮:", btn);
+
+        if (btn) {
+            document.body.removeChild(btn);
+        }
+    }
+}
