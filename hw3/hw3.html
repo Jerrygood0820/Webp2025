@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>景點觀光展覽資訊</title>
+    <script src="lab9.js" defer></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>景點觀光展覽資訊</h1>
+
+    <label for="search">搜尋名稱：</label>
+    <input type="text" id="search" placeholder="請輸入關鍵字" onchange="filterData()">
+
+    <table id="csie">
+        <tr>
+            <th>名稱</th>
+            <th>地點</th>
+            <th>票價</th>
+        </tr>
+    </table>
+
+    <div>
+        <button onclick="prevPage()">上一頁</button>
+        <span id="pageInfo">第 1 頁 / 共 N 頁</span>
+        <button onclick="nextPage()">下一頁</button>
+    </div>
+</body>
+</html>
